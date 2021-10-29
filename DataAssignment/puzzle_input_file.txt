@@ -1,5 +1,5 @@
 puzzles 1
-size 9x14
+size 20x20
 _X__X_1_X
 2___1_X__
 X_X___XX_

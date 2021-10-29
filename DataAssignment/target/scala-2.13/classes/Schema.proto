@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+message LightUpGame{
+  string name = 1;
+
+  message Game{
+    int32 PuzzleAmount = 1;
+    string PuzzleSize = 2;
+    repeated string PuzzleState = 3;
+  }
+
+  repeated Game games = 2;
+}

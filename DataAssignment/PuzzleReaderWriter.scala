@@ -2,12 +2,12 @@ import PuzzleSolverFunctions.charIfValid
 import java.io.FileWriter
 import scala.io._
 
-
 object PuzzleReaderWriter{
   var unsolvedFile:String="";
   var solvedFile:String="";
   var lines:List[String]=Nil;
   var fw:FileWriter=null;
+
 
   def initRW(infile:String, outfile:String)={
     unsolvedFile=infile
