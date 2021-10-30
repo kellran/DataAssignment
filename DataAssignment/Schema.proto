@@ -1,20 +1,34 @@
 syntax = "proto3";
 
 message Puzzle {
-  int32 sizex = 1;  // Puzzle size for testing.
-  int32 sizey = 2;  // Puzzle size for testing.
+  int32 sizex = 1;
+  int32 sizey = 2;
+  repeated tile Tile = 3;
+}
+message tile {
+  bool isWhite = 1;
+  bool isBlack = 2;
+  bool isLamp = 3;
+  bool is0 = 4;
+  bool is1 = 5;
+  bool is2 = 6;
+  bool is3 = 7;
+  bool is4 = 8;
 }
 
 message Puzzles {
   repeated Puzzle puzzle = 1;
+  int32 puzzlecount = 2;
 }
-
+/*
 message Solution {
-  int32 sizex = 1;  // Puzzle size.
-  int32 sizey = 2;  // Puzzle size.
-  string sol = 3;   // Solution as text
+  int32 sizex = 1;
+  int32 sizey = 2;
+  repeated tile Tile = 3;
 }
 
 message Solutions {
   repeated Solution solution = 1;
+  int32 solutioncount = 2;
 }
+ */

@@ -1,14 +1,19 @@
 import sys
-import Schema_pb2 as schema
+
+import Schema_pb2
 
 infile = "puzzle_input_file.out.bin"
-outfile= "puzzle_output_file.txt"
+outfile = "puzzle_output_file.txt"
+
 
 def readFromFile():
-    puzzles = schema.Solutions()
     with open(infile, "rb") as f:
-        puzzles.ParseFromString(f.read())
-    return puzzles
+        Puzzles = Schema_pb2.Puzzles()
+        Puzzles.ParseFromString(f.read())
+        with open(infile, "rb") as f:
+            Puzzles.ParseFromString(f.read())
+        return Puzzles
+
 
 def writeToFile(solutions):
     count = 0
@@ -21,7 +26,8 @@ def writeToFile(solutions):
             sizey = puzzle.sizey
             topic2 = "size " + str(sizex) + "x" + str(sizey) + "\n"
             f.write(topic2)
-            f.write(puzzle.sol+"\n")
+            f.write(puzzle.sol + "\n")
+
 
 solutionsFromScala = readFromFile()
-writeToFile(solutionsFromScala)
+# writeToFile(solutionsFromScala)

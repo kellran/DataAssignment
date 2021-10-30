@@ -6,13 +6,27 @@ infile = "puzzle_input_file.txt"
 outfile = "puzzle_input_file.in.bin"
 
 
-# Reads the input and returns a list of puzzle sizes.
-def splitFile(inputFile):
+def countFile(inputFile):
+    with open(inputFile, "r") as file:
+        if file.mode == "r":
+            content = file.readlines()
+            content.pop(1)
+
+            for lineIndex, line in enumerate(content):
+                content[lineIndex] = line.rstrip('\n')
+
+            for lineIndex, line in enumerate(content):
+                if "puzzles" in line:
+                    count = int(line[line.rfind(' ') + 1])
+            return count
+
+
+def sizeFile(inputFile):
     with open(inputFile, "r") as file:
         if file.mode == "r":
             content = file.readlines()
             content.pop(0)
-            boards = list()
+            size = list()
 
             for lineIndex, line in enumerate(content):
                 content[lineIndex] = line.rstrip('\n')
@@ -21,20 +35,58 @@ def splitFile(inputFile):
                 if "size" in line:
                     sizex = int(line[4:line.rfind('x')])
                     sizey = int(line[line.rfind('x') + 1:])
-                    #                    print("found puzzle with size "+str(sizex)+"x"+str(sizey))
-                    boards.append((sizex, sizey))
-            return boards
+                    size.append((sizex, sizey))
+            return size
 
+
+def lightupFile(inputFile):
+    with open(inputFile, "r") as file:
+        if file.mode == "r":
+            content = file.readlines()
+            content.pop(0)
+            content.pop(0)
+            lightup = []
+
+            for lineIndex, line in enumerate(content):
+                content[lineIndex] = line.rstrip('\n')
+                for charIndex, char in enumerate(line):
+                    lightup.append(char)
+
+            return lightup
+
+
+print(lightupFile(infile))
 
 protoPuzzles = schema.Puzzles()
-inputPuzzles = splitFile(infile)
+inputPuzzles = sizeFile(infile)
 
 for puzzle in inputPuzzles:
     protoPuzzle = protoPuzzles.puzzle.add()
     protoPuzzle.sizex = puzzle[0]
     protoPuzzle.sizey = puzzle[1]
 
+    lightup = lightupFile(infile)
+    count = 0
+    for elem in lightup:
+        if (lightup[count] == '_'):
+            protoPuzzle.Tile.add(isWhite=True)
+        elif (lightup[count] == 'X'):
+            protoPuzzle.Tile.add(isBlack=True)
+        elif (lightup[count] == '*'):
+            protoPuzzle.Tile.add(isLamp=True)
+        elif (lightup[count] == '0'):
+            protoPuzzle.Tile.add(is0=True)
+        elif (lightup[count] == '1'):
+            protoPuzzle.Tile.add(is1=True)
+        elif (lightup[count] == '2'):
+            protoPuzzle.Tile.add(is2=True)
+        elif (lightup[count] == '3'):
+            protoPuzzle.Tile.add(is3=True)
+        elif (lightup[count] == '4'):
+            protoPuzzle.Tile.add(is4=True)
+        count += 1
 with open(outfile, "wb") as f:
+    print(protoPuzzles)
     f.write(protoPuzzles.SerializeToString())
 
 # lightUp = schema.LightUpGame()

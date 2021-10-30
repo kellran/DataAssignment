@@ -14,20 +14,26 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0cSchema.proto\"&\n\x06Puzzle\x12\r\n\x05sizex\x18\x01 \x01(\x05\x12\r\n\x05sizey\x18\x02 \x01(\x05\"\"\n\x07Puzzles\x12\x17\n\x06puzzle\x18\x01 \x03(\x0b\x32\x07.Puzzle\"5\n\x08Solution\x12\r\n\x05sizex\x18\x01 \x01(\x05\x12\r\n\x05sizey\x18\x02 \x01(\x05\x12\x0b\n\x03sol\x18\x03 \x01(\t\"(\n\tSolutions\x12\x1b\n\x08solution\x18\x01 \x03(\x0b\x32\t.Solutionb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0cSchema.proto\";\n\x06Puzzle\x12\r\n\x05sizex\x18\x01 \x01(\x05\x12\r\n\x05sizey\x18\x02 \x01(\x05\x12\x13\n\x04Tile\x18\x03 \x03(\x0b\x32\x05.tile\"y\n\x04tile\x12\x0f\n\x07isWhite\x18\x01 \x01(\x08\x12\x0f\n\x07isBlack\x18\x02 \x01(\x08\x12\x0e\n\x06isLamp\x18\x03 \x01(\x08\x12\x0b\n\x03is0\x18\x04 \x01(\x08\x12\x0b\n\x03is1\x18\x05 \x01(\x08\x12\x0b\n\x03is2\x18\x06 \x01(\x08\x12\x0b\n\x03is3\x18\x07 \x01(\x08\x12\x0b\n\x03is4\x18\x08 \x01(\x08\"7\n\x07Puzzles\x12\x17\n\x06puzzle\x18\x01 \x03(\x0b\x32\x07.Puzzle\x12\x13\n\x0bpuzzlecount\x18\x02 \x01(\x05\x62\x06proto3')
 
 
 
 _PUZZLE = DESCRIPTOR.message_types_by_name['Puzzle']
+_TILE = DESCRIPTOR.message_types_by_name['tile']
 _PUZZLES = DESCRIPTOR.message_types_by_name['Puzzles']
-_SOLUTION = DESCRIPTOR.message_types_by_name['Solution']
-_SOLUTIONS = DESCRIPTOR.message_types_by_name['Solutions']
 Puzzle = _reflection.GeneratedProtocolMessageType('Puzzle', (_message.Message,), {
   'DESCRIPTOR' : _PUZZLE,
   '__module__' : 'Schema_pb2'
   # @@protoc_insertion_point(class_scope:Puzzle)
   })
 _sym_db.RegisterMessage(Puzzle)
+
+tile = _reflection.GeneratedProtocolMessageType('tile', (_message.Message,), {
+  'DESCRIPTOR' : _TILE,
+  '__module__' : 'Schema_pb2'
+  # @@protoc_insertion_point(class_scope:tile)
+  })
+_sym_db.RegisterMessage(tile)
 
 Puzzles = _reflection.GeneratedProtocolMessageType('Puzzles', (_message.Message,), {
   'DESCRIPTOR' : _PUZZLES,
@@ -36,29 +42,13 @@ Puzzles = _reflection.GeneratedProtocolMessageType('Puzzles', (_message.Message,
   })
 _sym_db.RegisterMessage(Puzzles)
 
-Solution = _reflection.GeneratedProtocolMessageType('Solution', (_message.Message,), {
-  'DESCRIPTOR' : _SOLUTION,
-  '__module__' : 'Schema_pb2'
-  # @@protoc_insertion_point(class_scope:Solution)
-  })
-_sym_db.RegisterMessage(Solution)
-
-Solutions = _reflection.GeneratedProtocolMessageType('Solutions', (_message.Message,), {
-  'DESCRIPTOR' : _SOLUTIONS,
-  '__module__' : 'Schema_pb2'
-  # @@protoc_insertion_point(class_scope:Solutions)
-  })
-_sym_db.RegisterMessage(Solutions)
-
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   _PUZZLE._serialized_start=16
-  _PUZZLE._serialized_end=54
-  _PUZZLES._serialized_start=56
-  _PUZZLES._serialized_end=90
-  _SOLUTION._serialized_start=92
-  _SOLUTION._serialized_end=145
-  _SOLUTIONS._serialized_start=147
-  _SOLUTIONS._serialized_end=187
+  _PUZZLE._serialized_end=75
+  _TILE._serialized_start=77
+  _TILE._serialized_end=198
+  _PUZZLES._serialized_start=200
+  _PUZZLES._serialized_end=255
 # @@protoc_insertion_point(module_scope)
