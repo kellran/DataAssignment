@@ -1,4 +1,4 @@
-puzzles 1
+puzzles 3
 size 9x14
 _X__X_1_X
 2___1_X__
@@ -14,3 +14,20 @@ X_X__X___
 _X_X0X_XX
 _2X___2__
 __1___X_X
+size 4x6
+____
+_4__
+X___
+____
+2X__
+____
+size 4x9
+XX_X
+X2__
+2_XX
+_XXX
+_XX_
+XXXX
+XX__
+____
+__2X

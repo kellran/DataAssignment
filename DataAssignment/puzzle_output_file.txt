@@ -1,16 +1,33 @@
-puzzles 1
+puzzles 3
 size 9x14
-*XL*XL0*X
-0*LL0*XLL
-XLXLLLXX*
-*X00*LXX0
-0L*XXXXL*
-*LLLXL*LX
-LXXXX*0*L
-L*X0LLLL*
-LXX*LLLLX
-XXXXXX*0*
-X*X*LXL*L
-LX*X0XLXX
-*0XLL*0*L
-L*0L*LXLX
+_X__X_1_X
+2___1_X__
+X_X___XX_
+_X11__XX2
+2__XXXX__
+____X___X
+_XXXX_3__
+__X1_____
+_XX_____X
+XXXXXX_3_
+X_X__X___
+_X_X0X_XX
+_2X___2__
+__1___X_X
+size 4x6
+____
+_4__
+X___
+____
+2X__
+____
+size 4x9
+XX_X
+X2__
+2_XX
+_XXX
+_XX_
+XXXX
+XX__
+____
+__2X

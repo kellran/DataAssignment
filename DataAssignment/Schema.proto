@@ -3,7 +3,7 @@ syntax = "proto3";
 message Puzzle {
   int32 sizex = 1;
   int32 sizey = 2;
-  repeated tile Tile = 3;
+  repeated  = 3;
 }
 message tile {
   bool isWhite = 1;
@@ -16,8 +16,8 @@ message tile {
   bool is4 = 8;
 }
 
-message Puzzles {
-  repeated Puzzle puzzle = 1;
+message fileofPuzzle {
+  repeated Puzzle puzzles = 1;
   int32 puzzlecount = 2;
 }
 /*
