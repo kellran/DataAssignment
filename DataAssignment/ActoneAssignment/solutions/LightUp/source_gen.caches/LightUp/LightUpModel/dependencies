@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="LightUp.LightUpModel.LightUpSpesification">
+    <classNode dependClassName="ActOne.runtime.model.ITerm" />
+    <classNode dependClassName="ActOne.runtime.model.Operator" />
+    <classNode dependClassName="ActOne.runtime.model.Reductions" />
+    <classNode dependClassName="ActOne.runtime.predefined.ANY" />
+    <classNode dependClassName="ActOne.runtime.predefined.BOOLEAN" />
+    <classNode dependClassName="ActOne.runtime.predefined.BOOLEAN.Bool" />
+    <classNode dependClassName="ActOne.runtime.predefined.INTEGER" />
+    <classNode dependClassName="ActOne.runtime.predefined.INTEGER.Int" />
+    <classNode dependClassName="ActOne.runtime.predefined.STRING" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.System" />
+  </dependency>
+</dependenciesRoot>
+
